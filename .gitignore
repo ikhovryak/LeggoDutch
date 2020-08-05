@@ -1,0 +1,8 @@
+*.pth
+*.pyc
+*.png
+*.pb
+__pychache__/
+ghega-dataset/
+.DS_Store
+
