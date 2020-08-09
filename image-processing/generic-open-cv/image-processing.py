@@ -1,19 +1,23 @@
 import cv2
 import numpy as np
 import mapper
-image=cv2.imread("images/receipt_00700.png")   #read in the image
+image=cv2.imread("../images/receipt_00700.png")   #read in the image
 image=cv2.resize(image,(960,1280)) #resizing because opencv does not work well with bigger images
 orig=image.copy()
 
 gray=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)  #RGB To Gray Scale
-# cv2.imshow("Title",gray)
+cv2.imshow("Title",gray)
+cv2.waitKey()
 
 blurred=cv2.GaussianBlur(gray,(5,5),0)  #(5,5) is the kernel size and 0 is sigma that determines the amount of blur
-# cv2.imshow("Blur",blurred)
+cv2.imshow("Blur",blurred)
+cv2.waitKey()
 
 edged=cv2.Canny(blurred,30,50)  #30 MinThreshold and 50 is the MaxThreshold
-# cv2.imshow("Canny",edged)
-cv2.imwrite('images/processed_image.jpg', edged)
+cv2.imshow("Canny",edged)
+cv2.waitKey()
+
+cv2.imwrite('../images/processed_image.jpg', edged)
 
 
 _,contours,_=cv2.findContours(edged,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)  #retrieve the contours as a list, with simple apprximation model
@@ -32,6 +36,5 @@ pts=np.float32([[0,0],[600,0],[600,800],[0,800]])  #map to 800*800 target window
 
 op=cv2.getPerspectiveTransform(approx,pts)  #get the top or bird eye view effect
 dst=cv2.warpPerspective(orig,op,(600,800))
-
-
-# cv2.imshow("Scanned",dst)
+cv2.imshow("Scanned",dst)
+cv2.waitKey()
