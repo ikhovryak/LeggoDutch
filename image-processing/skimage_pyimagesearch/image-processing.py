@@ -20,8 +20,14 @@ image = imutils.resize(image, height = 500)
 # convert the image to grayscale, blur it, and find edges
 # in the image
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-gray = cv2.GaussianBlur(gray, (5, 5), 0)
-edged = cv2.Canny(gray, 75, 200)
+# gray = cv2.GaussianBlur(gray, (5, 5), 0)
+kernel = np.array([[-1,-1,-1], 
+					[-1, 9,-1],
+					[-1,-1,-1]])
+gray = cv2.filter2D(gray, -1, kernel)
+gray = cv2.GaussianBlur(gray, (7, 7), 0)
+edged = cv2.Canny(gray, 75, 300)
+
 # show the original image and the edge detected image
 print("STEP 1: Edge Detection")
 cv2.imshow("Image", image)

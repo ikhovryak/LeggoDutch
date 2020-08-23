@@ -1,6 +1,6 @@
 import cv2
 
-file = open("../research-charnet-master/results/demo_1.txt", "r")
+file = open("./research-charnet-master/results/demo_1.txt", "r")
 output = cv2.imread("./demo_1.jpg")
 
 for line in file.readlines():

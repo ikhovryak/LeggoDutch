@@ -10,7 +10,7 @@ for f in os.listdir("./extracted_rois"):
         continue
     
     img = cv2.imread("./extracted_rois/" + f, 0)
-    ret, img = cv2.threshold(img,110,255,cv2.THRESH_BINARY)
+    # ret, img = cv2.threshold(img,110,255,cv2.THRESH_BINARY)
     
     config = ("-l eng --oem 1 --psm 8")
     text = pytesseract.image_to_string(img, config=config)
