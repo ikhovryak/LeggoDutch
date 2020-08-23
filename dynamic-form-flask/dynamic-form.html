@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+{% block content %}
+            <h3 class="display-4">Let's begin!</h3>
+              <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                  <div class="form-group">
+                    {% for detail in form.person_details %}
+                        {{ detail.hidden_tag() }}
+                        {{ forms.render_field(detail.person_name) }}
+                        {{ forms.render_field(detail.person_telephone) }}
+                    {% endfor %}
+                  </div>
+                </fieldset>
+                <div class="form-group">
+                  {{ form.submit_person_details(class="btn btn-outline-info") }}
+
+                </div>
+              </form>
+
+                </div>
+                <div class="col-md-2"></div>
+
+                </div>
+{% endblock content %}
