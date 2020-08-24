@@ -1,0 +1,59 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="row bg-white rounded py-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="text-info" href="{{ url_for('home') }}">Main</a></li>
+          <li class="breadcrumb-item"><a class="text-info" href="{{ url_for('get_main_data') }}">Upload Receipt</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Order Summary</a></li>
+        </ol>
+      </nav>
+            <h3 class="display-5">Order Summary</h3>
+            <form method="POST" action="">
+                
+            <!-- Table -->
+            <table class="table table-hover ">
+                    <thead>
+                        <tr>
+                            {% for col in column_names %}
+                            <th scope="col">{{col}}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    {% for row in row_data %}
+                    <tr>
+                        {% for col, row_ in zip(column_names, row) %}
+                        
+                        {% if col == input_column %}
+                        <td>
+                            <div class="form-group">
+                                <!-- <input type="tel" id="fname" name="friend_phone" class="form-control form-control-sm"> -->
+                                <select required class="custom-select mr-sm-2" name="friend_phone" >
+                                        <option value="" selected disabled hidden>Choose guest...</option>
+                                        {% for friend in friends_list.items() %}
+                                        <option value="{{ friend }}">{{ friend[0] }}</option>
+                                        {% endfor %}
+                                </select>
+                            </div>
+        
+                        </td>
+                        {% else %}
+                        <td>{{row_}}</td>
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                
+                </table>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-outline-info">
+                </div>
+                </form>
+
+        </div>
+
+    </div>
+
+{% endblock content %}
