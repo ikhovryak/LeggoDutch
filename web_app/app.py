@@ -140,6 +140,8 @@ def final_individual_totals():
     restaurant = request.args.get('restaurant')
     date = request.args.get('date')
     personal_total_df = Params.FOODS_DF.groupby(['Friend']).sum().reset_index()
+    # replace from_number with twilio phone number. Make sure you register the phone number you want to message to on twilio account if not your message will not reach
+    # the phone number. This is a limitation of a trial account.
     from_number = "+17865634468"
 
     print(personal_total_df)
