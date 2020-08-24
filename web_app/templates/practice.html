@@ -1,0 +1,63 @@
+{% extends "template.html" %}
+{% block content %}
+          <!-- <div class="card"> -->
+            <!-- <div class="card-header">
+              Learn
+            </div> -->
+            <!-- <div class="card-body"> -->
+            <h3 class="display-4">Let's begin!</h3>
+              <form method="POST" action="">
+                {{ correct_form.hidden_tag() }}
+                <fieldset class="form-group">
+                  <div class="form-group">
+                    <span class="badge badge-info mr-2">1</span>
+                    <strong>{{ correct_form.correct_text.label(class="form-control-label lead") }}</strong>
+
+                    {% if correct_form.correct_text. errors %}
+                        {{ correct_form.correct_text(class="form-control is-invalid")}}
+                        <div class="invalid-feedback">
+                          {% for error in correct_form.correct_text.errors %}
+                            <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                    {% else %}
+                      <!-- {{ correct_form.correct_text(class="form-control")}} -->
+                      <input class="form-control" id="correct_text" name="correct_text" required type="text" value="{{ correct_text }}">
+                    {% endif %}
+
+                  </div>
+                </fieldset>
+                <div class="form-group">
+                  {{ correct_form.submitc(class="btn btn-outline-info") }}
+
+                </div>
+              </form>
+
+
+              <hr>
+              <strong><p class="lead"><span class="badge badge-info mr-2">2</span>This is how it sounds:</p></strong>
+
+              <audio id="correct_audio" preload="auto" controls>
+                <source id="correct_source" src="{{ correct_sound_address }}" type="audio/wav">
+                    Your browser does not support the audio element.
+              </audio>
+            <br/>
+            <br/>
+              <hr>
+                <strong><p class="lead"><span class="badge badge-info mr-2">3</span>Ready to practice? Select your file!</p></strong>
+
+                <form method="POST" action="" enctype="multipart/form-data">
+                  {{ user_form.hidden_tag() }}
+                  <fieldset class="form-group">
+                    <div class="form-group">
+                      {{ user_form.user_speech(class="form-control-file") }}
+                      <!-- <input type="file" accept="audio/* class="form-control" id="user_speech" name="user_speech"  value="" capture> -->
+                    </div>
+                  </fieldset>
+                <div class="form-group">
+                  {{ user_form.submitu(class="btn btn-outline-info") }}
+
+                </div>
+              </form>
+
+{% endblock content %}

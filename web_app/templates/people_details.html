@@ -1,0 +1,48 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="row bg-white rounded py-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="text-info" href="{{ url_for('home') }}">Main</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Upload Info</li>
+        </ol>
+      </nav>
+            <h3 class="display-5">Guests Info Form</h3>
+              <form method="POST" action="">
+                <fieldset class="form-group">
+                    <div class="row">
+                        <div class="col">
+                          <label >Guest's Name</label>
+
+                        </div>
+                        <div class="col">
+                          <label >Guest's Phone</label>
+
+                        </div>
+                      </div>
+
+                  {% for n in range(count) %}
+                  <div class="row">
+                      <div class="col">
+                        <input type="text" class="form-control  mb-2" placeholder="Guest {{ n+1 }} Name" name="names" required>
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control mb-2" placeholder="Guest {{ n+1 }} Phone" name="phones" required>
+                      </div>
+                    </div>
+
+                  {% endfor %}
+                </fieldset>
+                <div class="form-group">
+                  <input type="submit" class="btn btn-outline-info">
+                </div>
+
+              </form>
+
+                </div>
+
+                </div>
+
+{% endblock content %}

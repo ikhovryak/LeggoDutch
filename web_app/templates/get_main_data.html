@@ -1,0 +1,65 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="row bg-white rounded py-4">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a class="text-info" href="{{ url_for('home') }}">Main</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Upload Receipt</li>
+    </ol>
+  </nav>
+            <h3 class="display-4">Let's begin!</h3>
+              <form method="POST" action="" enctype=multipart/form-data>
+                {{ upload_form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <div class="form-group">
+                        {{ upload_form.restaurant.label(class="form-control-label  lead") }}
+                        {{ upload_form.restaurant(class="form-control form-control-sm") }}
+                    </div>
+
+                    <div class="form-group">
+                            {{ upload_form.date.label(class="form-control-label  lead") }}
+                            {{ upload_form.date(class="form-control form-control-sm", type="date") }}
+                            {% if upload_form.date.errors %}
+                            {% for error in upload_form.date.errors %}
+                                <span class="text-danger">{{ error }}</span></br>
+                            {% endfor %}
+                        {% endif %}
+                        </div>
+
+                    <div class="form-group">
+                            {{ upload_form.num_friends.label(class="form-control-label lead") }}
+                            {{ upload_form.num_friends(class="form-control form-control-sm") }}
+                    </div>
+                
+                    <div class="form-group">
+                        <!-- <span class="badge badge-info mr-2">1</span> -->
+                        <strong>{{ upload_form.receipt_image.label(class="form-control-label lead") }}</strong>
+
+                        
+                        
+                        {{ upload_form.receipt_image(class="form-control-file form-control-sm") }}
+                        {% if upload_form.receipt_image.errors %}
+                            {% for error in upload_form.receipt_image.errors %}
+                                <span class="text-danger">{{ error }}</span></br>
+                            {% endfor %}
+                        {% endif %}
+
+                        
+                        </div>
+                
+                </fieldset>
+                <div class="form-group">
+                  {{ upload_form.submit(class="btn btn-outline-info") }}
+                </div>
+            
+              </form>
+
+            </div>
+                </div>
+                <div class="col-md-2"></div>
+
+                </div>
+                
+{% endblock content %}
