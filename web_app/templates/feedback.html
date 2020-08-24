@@ -1,0 +1,105 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="row bg-white rounded py-4">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a class="text-info" href="{{ url_for('home') }}">Main</a></li>
+      <li class="breadcrumb-item"><a class="text-info" href="{{ url_for('learn') }}">Practice</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Feedback</li>
+    </ol>
+  </nav>
+  <h3 class="display-4">Your feedback:</h3>
+  <strong><p class="lead"><span class="badge badge-info mr-2">1</span>Pronounciation</p></strong>
+  <p>We ran a speech recognition algorithm on your recording and compared the recognized text with the sentence that you wanted to practice.
+  This is what we found:</p>
+  <div class="row pl-4">
+    <div class="col-md-3">
+      <p>Original sentence:</p>
+    </div>
+    <div class="col">
+      <p>
+      {% for word in correct_list %}
+        {% if word in wrong_correct %}
+        <span class="text-danger">{{ word }}</span>
+        {% else %}
+        <span class="text-success">{{ word }}</span>
+        {% endif %}
+      {% endfor %}
+      </p>
+    </div>
+  </div>
+  <div class="row pl-4">
+    <div class="col-md-3">
+    <p>Your sentence:</p>
+    </div>
+    <div class="col">
+      <p>
+      {% for word in user_list %}
+        {% if word in wrong_user %}
+        <span class="text-danger">{{ word }}</span>
+        {% else %}
+        <span class="text-success">{{ word }}</span>
+        {% endif %}
+      {% endfor %}
+      </p>
+    </div>
+  </div>
+  <div class="row pl-4">
+    <div class="col">
+      {% if wrong_correct|length == 0 %}
+        <div class="bd-callout bd-callout-success">
+          <h5> Great job! </h5>
+          <p>Congratulations! You did very well on the pronounciation part of the exercise and pronouced
+          all the words clearly and correctly!</p>
+
+        </div>
+      {% elif wrong_correct|length <  threshold  %}
+        <div class="bd-callout bd-callout-warning">
+          <h5> Good job! </h5>
+          <p>You have pronounced more than a half of the words correctly! Try practicing pronoucing
+          the words clearly a little bit more and you will do great.</p>
+        </div>
+      {% elif wrong_correct|length >= threshold %}
+      <div class="bd-callout bd-callout-danger">
+        <h5> Nice try! </h5>
+        <p>You've got a lot of words off but don't worry, it's just the beginning of your journey! Try practicing pronoucing
+        the words correctly more and you will see the progress.</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <hr>
+  <strong><p class="lead"><span class="badge badge-info mr-2">2</span>Pacing</p></strong>
+  <img src="{{ pic_path }}" />
+  <div class="row pl-4">
+    <div class="col">
+      {% if long_breaks|length == 0 %}
+        <div class="bd-callout bd-callout-success">
+          <h5> Great job! </h5>
+          <p>Congratulations! You pronounced the words with correct pace and you spoke naturally without significant breaks!</p>
+        </div>
+      {% else %}
+      <div class="bd-callout bd-callout-warning">
+        <h5> Nice try! </h5>
+        <p>Your speeking was good, however, you made some significant breaks while pronoucing the sentence. Here are the times of your breaks:</p>
+          <ol>
+          {% for break in long_breaks %}
+            <li>{{ break }}</li>
+          {% endfor %}
+          </ol>
+        <p> Prectice makes perfect! Try decreasing the breaks between the words.</p>
+      </div>
+      {% endif %}
+    <div class="row ">
+      <div class="col text-center">
+        <a href="{{ url_for('restart') }}" class="btn btn-info">Try again!</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-2"></div>
+
+  </div>
+{% endblock %}

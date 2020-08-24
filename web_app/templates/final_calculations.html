@@ -1,0 +1,59 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="row bg-white rounded py-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="text-info" href="{{ url_for('home') }}">Main</a></li>
+          <li class="breadcrumb-item"><a class="text-info" href="{{ url_for('get_main_data') }}">Upload Receipt</a></li>
+          <li class="breadcrumb-item"><a class="text-info" href="{{ url_for('result') }}">Order Summary</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Final Calculations</li>
+        </ol>
+      </nav>
+            <h3 class="display-5">Final Calculations</h3>
+            
+                
+            <!-- Table -->
+            <table class="table table-hover ">
+                    <thead>
+                        <tr>
+                            {% for col in column_names %}
+                            <th scope="col">{{col}}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    {% for row in row_data %}
+                    <tr>
+                        {% for col, row_ in zip(column_names, row) %}
+                        
+                        {% if col == input_column %}
+                          <td>{{row_}}</td>
+                        {% else %}
+                        <td>{{row_}}</td>
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                
+                </table>
+                <form method="POST" action="">
+                    <input type="submit" class="btn btn-success" value="Send text reminders!">
+                </form>
+                <!-- <button type="button" class="btn btn-success">Send text reminders!</button> -->
+                
+
+        </div>
+
+    </div>
+
+{% endblock content %}
