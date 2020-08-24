@@ -27,16 +27,14 @@ def get_food_items_using_PyTorch(image):
     Output: Pandas Dataframe with "Food" and "Price" columns 
     """
 
-    result = text_main_engine(image)
-    # Result at the moment are only list of text w/ their coordinates on the image
-    # ONGOING: Parse dish and price into return dict
+    food = text_main_engine(image)
 
-    food = {
-        "Pasta Bolognese":12.50,
-        "Pasta Carbonara":13.00,
-        "Pizza": 10.00,
-        "Cheesecake": 8.00
-    }
+    # food = {
+    #     "Pasta Bolognese":12.50,
+    #     "Pasta Carbonara":13.00,
+    #     "Pizza": 10.00,
+    #     "Cheesecake": 8.00
+    # }
     
     df = pd.DataFrame(list(food.items()), columns = ['Food','Price'])
     

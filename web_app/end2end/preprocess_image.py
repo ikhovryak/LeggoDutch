@@ -47,6 +47,9 @@ def preprocess(image):
         screenCnt
     except:
         raise ValueError("Image has no clear 4 sides")
+    finally:
+        return orig
+        
     # show the contour (outline) of the piece of paper
     # cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 2)
 
@@ -58,6 +61,8 @@ def preprocess(image):
     warped = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
     T = threshold_local(warped, 11, offset = 10, method = "gaussian")
     warped = (warped > T).astype("uint8") * 255
+
+    warped = cv2.cvtColor(warped, cv2.COLOR_GRAY2RGB)
 
     return warped
 

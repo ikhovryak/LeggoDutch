@@ -2,7 +2,7 @@
 import os
 import numpy as np
 import cv2
-import imgproc
+from CRAFT import imgproc
 
 # borrowed from https://github.com/lengstrom/fast-style-transfer/blob/master/src/utils.py
 def get_files(img_dir):
@@ -25,7 +25,7 @@ def list_files(in_path):
                 gt_files.append(os.path.join(dirpath, file))
             elif ext == '.zip':
                 continue
-    # img_files.sort()
+    # img_files.sort() 
     # mask_files.sort()
     # gt_files.sort()
     return img_files, mask_files, gt_files

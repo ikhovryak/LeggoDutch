@@ -19,13 +19,13 @@ from PIL import Image
 import cv2
 from skimage import io
 import numpy as np
-import craft_utils
-import imgproc
-import file_utils
+from CRAFT import craft_utils
+from CRAFT import imgproc
+from CRAFT import file_utils
 import json
 import zipfile
 
-from craft import CRAFT
+from CRAFT.craft import CRAFT
 
 from collections import OrderedDict
 def copyStateDict(state_dict):
@@ -120,7 +120,7 @@ def predict(image,
     # LinkRefiner
     refine_net = None
     if refine:
-        from refinenet import RefineNet
+        from CRAFT.refinenet import RefineNet
         refine_net = RefineNet()
         print('Loading weights of refiner from checkpoint (' + refiner_model + ')')
         if cuda:
