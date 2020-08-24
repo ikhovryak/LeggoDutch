@@ -10,6 +10,9 @@ from PIL import Image
 import pandas as pd
 import json
 
+from CRAFT import imgproc
+from end2end.end2end import text_main_engine
+
 app = Flask(__name__)
 speech_key, service_region = "c87da06e1dfe4dd3b6e58fa41ec19c95", "eastus"
 app.config['SECRET_KEY'] = "4cf9c9881c554ef032f3a12c7f225dea"
@@ -22,15 +25,23 @@ def get_food_items_using_PyTorch(image):
     Input: Pillow image file (png or jpg)
     Output: Pandas Dataframe with "Food" and "Price" columns 
     """
+
+    result = text_main_engine(image)
+    # Result at the moment are only list of text w/ their coordinates on the image
+    # ONGOING: Parse dish and price into return dict
+
     food = {
         "Pasta Bolognese":12.50,
         "Pasta Carbonara":13.00,
         "Pizza": 10.00,
         "Cheesecake": 8.00
     }
-    df = pd.DataFrame(list(food.items()),columns = ['Food','Price'])
+    
+    df = pd.DataFrame(list(food.items()), columns = ['Food','Price'])
+    
     length = df.shape[0]
     df["Friend"] = ["" for i in range(length)]
+    
     return df
 
 class Params():
@@ -66,7 +77,8 @@ def get_main_data():
         num_friends = int(upload_form.num_friends.data)
 
         if upload_form.receipt_image.data:
-            image = Image.open(upload_form.receipt_image.data)
+            # image = Image.open(upload_form.receipt_image.data)
+            image = imgproc.loadImage(upload_form.receipt_image.data)
             Params.FOODS_DF = get_food_items_using_PyTorch(image)
 
             # when form is validated and submitted, go to entering individual people's details

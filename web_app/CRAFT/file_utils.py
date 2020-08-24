@@ -38,7 +38,7 @@ def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=
             boxes (array): array of result file
                 Shape: [num_detections, 4] for BB output / [num_detections, 4] for QUAD output
         Return:
-            None
+            Result image
         """
         img = np.array(img)
 
@@ -73,4 +73,6 @@ def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=
 
         # Save result image
         cv2.imwrite(res_img_file, img)
+
+        return img
 
