@@ -9,6 +9,7 @@ import glob
 from PIL import Image
 import pandas as pd
 import json
+from twilio_message import send_message
 
 from CRAFT import imgproc
 from end2end.end2end import text_main_engine
@@ -141,13 +142,16 @@ def final_individual_totals():
     restaurant = request.args.get('restaurant')
     date = request.args.get('date')
     personal_total_df = Params.FOODS_DF.groupby(['Friend']).sum().reset_index()
+    from_number = "+17865634468"
 
+    print(personal_total_df)
     if request.method == 'POST':
-        # message_text = "Hello! Just a reminder to pay $%.2f to the host for your meal at %s on %s!" % (price, restaurant, date)
+        for index, row in personal_total_df.iterrows():
+            price = row['Price']
+            message_text = "Hello! Just a reminder to pay $%.2f to the host for your meal at %s on %s!" % (price, restaurant, date)
+            send_message(from_number, row['Phone'], message_text)
 
-        # ----------------------
-        # TWILIO PART GOES HERE (see commented out message template above)
-        # ----------------------
+        
         flash('Text messages were sent!', 'success')
         pass
 
