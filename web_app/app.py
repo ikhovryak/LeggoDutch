@@ -40,7 +40,7 @@ def add_header(r):
     r.headers["Expires"] = "0"
     r.headers['Cache-Control'] = 'public, max-age=0'
     return r
-    
+
 def get_food_items_using_PyTorch(image, weights_dir, weights_refiner_dir):
     """
     Input: Pillow image file (png or jpg)
