@@ -19,3 +19,4 @@ torch==1.0.0a0+ff608a9
 torchvision==0.2.2
 imutils
 pytesseract
+tesseract
