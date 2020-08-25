@@ -16,9 +16,7 @@ def if_food(word):
 
 def line_food(line: list):
 
-    for box in line:
-        
-        
+    for box in line:    
         words = box.strip().split(' ')
         
         for word in words:

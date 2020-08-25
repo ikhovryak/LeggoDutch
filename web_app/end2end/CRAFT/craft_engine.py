@@ -106,7 +106,6 @@ def predict(image,
 
     if torch.cuda.is_available():
         cuda = True
-
     print('Loading weights from checkpoint (' + trained_model + ')')
     if cuda:
         net.load_state_dict(copyStateDict(torch.load(trained_model)))

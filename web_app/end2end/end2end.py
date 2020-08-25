@@ -55,8 +55,9 @@ def text_main_engine(image):
             range2 = bot2 - top2
 
             if -5 < (mid1 - mid2) < 5:
-                
+               
                 line.append(results[i][0].strip())
+
                 word = results[i][0].split()
 
         lines.append(line)
