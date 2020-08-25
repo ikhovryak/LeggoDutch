@@ -4,18 +4,19 @@ import cv2
 import re
 import torch
 
-import CRAFT
-from CRAFT import craft_utils
-from CRAFT import imgproc
+import end2end
+import end2end.CRAFT
+from end2end.CRAFT import craft_utils
+from end2end.CRAFT import imgproc
 from end2end.CRAFT import craft_engine
 
-import deep_recognition
-from deep_recognition import *
+import end2end.deep_recognition
+from end2end.deep_recognition import *
 from end2end.pyteserract_engine import recognize
 from end2end.preprocess_image import preprocess
 from end2end.food_helper import if_food, line_food
 
-def text_main_engine(image):
+def text_main_engine(image, weights_dir, weights_refiner_dir):
 
     lines = []
 
@@ -24,7 +25,7 @@ def text_main_engine(image):
     # cv2.imshow("main", dewarped)
     # cv2.waitKey(0)
     
-    bboxes = craft_engine.predict(dewarped) # return predicted bounding boxes of text 
+    bboxes = craft_engine.predict(dewarped, trained_model = weights_dir, refiner_model=weights_refiner_dir) # return predicted bounding boxes of text 
 
     # results = deep_recognition.deep_recognize_engine.recognize(bboxes)
     #TODO: modify code in deep-text-recognize to experiment this text recognition engine

@@ -19,8 +19,8 @@ from PIL import Image
 import cv2
 from skimage import io
 import numpy as np
-from CRAFT import craft_utils
-from CRAFT import imgproc
+from end2end.CRAFT import craft_utils
+from end2end.CRAFT import imgproc
 from end2end.CRAFT import file_utils
 import json
 import zipfile
@@ -122,7 +122,7 @@ def predict(image,
     # LinkRefiner
     refine_net = None
     if refine:
-        from CRAFT.refinenet import RefineNet
+        from end2end.CRAFT.refinenet import RefineNet
         refine_net = RefineNet()
         print('Loading weights of refiner from checkpoint (' + refiner_model + ')')
         if cuda:

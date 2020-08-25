@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
-from CRAFT.basenet.vgg16_bn import init_weights
+from end2end.CRAFT.basenet.vgg16_bn import init_weights
 
 
 class RefineNet(nn.Module):
