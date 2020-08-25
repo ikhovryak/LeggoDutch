@@ -119,17 +119,22 @@ def test_net(net, image, text_threshold, link_threshold, low_text, cuda, poly, r
 
 
 
-if __name__ == '__main__':
+def main(trained_model='weights/craft_mlt_25k.pth', 
+            text_threshold=0.7, low_text=0.4, link_threshold=0.4, cuda=True,
+            canvas_size=1280, mag_ratio=1.5,
+            poly=False, show_time=False, test_folder='/data/', 
+            refine=True, refiner_model='weights/craft_refiner_CTW1500.pth'):
+# if __name__ == '__main__':
     # load net
     net = CRAFT()     # initialize
 
-    print('Loading weights from checkpoint (' + args.trained_model + ')')
-    if args.cuda:
-        net.load_state_dict(copyStateDict(torch.load(args.trained_model)))
+    print('Loading weights from checkpoint (' + trained_model + ')')
+    if cuda:
+        net.load_state_dict(copyStateDict(torch.load(trained_model)))
     else:
-        net.load_state_dict(copyStateDict(torch.load(args.trained_model, map_location='cpu')))
+        net.load_state_dict(copyStateDict(torch.load(trained_model, map_location='cpu')))
 
-    if args.cuda:
+    if cuda:
         net = net.cuda()
         net = torch.nn.DataParallel(net)
         cudnn.benchmark = False
@@ -138,34 +143,32 @@ if __name__ == '__main__':
 
     # LinkRefiner
     refine_net = None
-    if args.refine:
+    if refine:
         from refinenet import RefineNet
         refine_net = RefineNet()
-        print('Loading weights of refiner from checkpoint (' + args.refiner_model + ')')
-        if args.cuda:
-            refine_net.load_state_dict(copyStateDict(torch.load(args.refiner_model)))
+        print('Loading weights of refiner from checkpoint (' + refiner_model + ')')
+        if cuda:
+            refine_net.load_state_dict(copyStateDict(torch.load(refiner_model)))
             refine_net = refine_net.cuda()
             refine_net = torch.nn.DataParallel(refine_net)
         else:
-            refine_net.load_state_dict(copyStateDict(torch.load(args.refiner_model, map_location='cpu')))
+            refine_net.load_state_dict(copyStateDict(torch.load(refiner_model, map_location='cpu')))
 
         refine_net.eval()
-        args.poly = True
+        poly = True
 
     t = time.time()
 
     # load data
-    for k, image_path in enumerate(image_list):
-        print("Test image {:d}/{:d}: {:s}".format(k+1, len(image_list), image_path), end='\r')
-        image = imgproc.loadImage(image_path)
+    image = imgproc.loadImage(image_path)
 
-        bboxes, polys, score_text = test_net(net, image, args.text_threshold, args.link_threshold, args.low_text, args.cuda, args.poly, refine_net)
+    bboxes, polys, score_text = test_net(net, image, text_threshold, link_threshold, low_text, cuda, poly, refine_net)
 
-        # save score text
-        filename, file_ext = os.path.splitext(os.path.basename(image_path))
-        mask_file = result_folder + "/res_" + filename + '_mask.jpg'
-        cv2.imwrite(mask_file, score_text)
+    # save score text
+    filename, file_ext = os.path.splitext(os.path.basename(image_path))
+    mask_file = result_folder + "/res_" + filename + '_mask.jpg'
+    cv2.imwrite(mask_file, score_text)
 
-        file_utils.saveResult(image_path, image[:,:,::-1], polys, dirname=result_folder)
-
+    final_img = file_utils.saveResult(image_path, image[:,:,::-1], polys, dirname=result_folder)
+    
     print("elapsed time : {}s".format(time.time() - t))
