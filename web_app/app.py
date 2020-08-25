@@ -16,6 +16,10 @@ import end2end.CRAFT
 from end2end.CRAFT import imgproc
 from end2end.end2end import text_main_engine
 
+import end2end.CRAFT
+from end2end.CRAFT import imgproc
+from end2end.end2end import text_main_engine
+
 app = Flask(__name__)
 speech_key, service_region = "c87da06e1dfe4dd3b6e58fa41ec19c95", "eastus"
 app.config['SECRET_KEY'] = "4cf9c9881c554ef032f3a12c7f225dea"
@@ -38,7 +42,8 @@ def get_food_items_using_PyTorch(image, weights_dir):
 
     food = text_main_engine(image)
 
-    df = pd.DataFrame(list(food.items()),columns = ['Food','Price'])
+    df = pd.DataFrame(list(food.items()), columns = ['Food','Price'])
+
     length = df.shape[0]
     df["Friend"] = ["" for i in range(length)]
     

@@ -1,0 +1,256 @@
+finetune/ft9.png	2.75
+finetune/ft17.png	3,50
+finetune/ft206.png	18,00
+finetune/ft212.png	4.41
+finetune/ft158.png	87.53
+finetune/ft170.png	14.00
+finetune/ft164.png	7.55
+finetune/ft171.png	77.40 F
+finetune/ft159.png	15.00
+finetune/ft213.png	107.65
+finetune/ft207.png	11.46
+finetune/ft16.png	$10.50
+finetune/ft8.png	$17.95
+finetune/ft28.png	1,00
+finetune/ft14.png	1.55
+finetune/ft239.png	1.88 FS
+finetune/ft211.png	56,00
+finetune/ft205.png	13,74 $
+finetune/ft198.png	3,00
+finetune/ft167.png	19.50
+finetune/ft173.png	14.95
+finetune/ft172.png	1.38
+finetune/ft166.png	8.00
+finetune/ft199.png	33.90
+finetune/ft204.png	0,60 $
+finetune/ft210.png	2.00
+finetune/ft238.png	56.00
+finetune/ft15.png	41.40 F
+finetune/ft29.png	0.35
+finetune/ft11.png	$2.06
+finetune/ft39.png	20.00
+finetune/ft214.png	6.39
+finetune/ft200.png	0.09
+finetune/ft228.png	11.00
+finetune/ft189.png	5.50 F
+finetune/ft162.png	3.95
+finetune/ft176.png	10.00
+finetune/ft177.png	12,00
+finetune/ft163.png	2.70 ZRL
+finetune/ft188.png	10.65
+finetune/ft229.png	107.00
+finetune/ft201.png	53,00
+finetune/ft215.png	$31.00
+finetune/ft38.png	$1.55
+finetune/ft10.png	$1.04
+finetune/ft12.png	$12.59
+finetune/ft203.png	8.00
+finetune/ft217.png	4,00    
+finetune/ft175.png	1.95
+finetune/ft161.png	75,50
+finetune/ft149.png	1.90 ZRL
+finetune/ft148.png	10,00
+finetune/ft160.png	97.00
+finetune/ft174.png	8.95
+finetune/ft216.png	4.99
+finetune/ft202.png	8.00
+finetune/ft13.png	160.00
+finetune/ft48.png	.02 
+finetune/ft74.png	69.00
+finetune/ft60.png	48.00
+finetune/ft259.png	11.95
+finetune/ft113.png	495,00
+finetune/ft107.png	2.00
+finetune/ft106.png	193.00 SR
+finetune/ft112.png	46,00
+finetune/ft258.png	2.95
+finetune/ft61.png	1,360.14
+finetune/ft75.png	2,00
+finetune/ft63.png	1.09
+finetune/ft77.png	10.50
+finetune/ft88.png	0.10
+finetune/ft138.png	28.35
+finetune/ft104.png	1.890 A
+finetune/ft110.png	17.00
+finetune/ft111.png	1.19
+finetune/ft105.png	70,00
+finetune/ft139.png	0.20
+finetune/ft89.png	300,00
+finetune/ft76.png	2.29
+finetune/ft62.png	$10.00
+finetune/ft66.png	96.95
+finetune/ft72.png	10.40
+finetune/ft99.png	2.91
+finetune/ft101.png	1.44    
+finetune/ft115.png	9.99
+finetune/ft129.png	30.20
+finetune/ft128.png	1.55 $
+finetune/ft114.png	RM117.90
+finetune/ft100.png	6,00
+finetune/ft98.png	1.30
+finetune/ft73.png	0.02
+finetune/ft67.png	4,50
+finetune/ft71.png	16.30
+finetune/ft65.png	$4.50
+finetune/ft59.png	63.00
+finetune/ft260.png	$12.59
+finetune/ft248.png	41.40 F
+finetune/ft116.png	26.38
+finetune/ft102.png	11.15
+finetune/ft103.png	24.00
+finetune/ft117.png	.68 FS
+finetune/ft249.png	18.00
+finetune/ft58.png	0.45
+finetune/ft64.png	75.00 F
+finetune/ft70.png	13.75
+finetune/ft69.png	0.63
+finetune/ft55.png	30.00
+finetune/ft41.png	1.68 FS
+finetune/ft244.png	53.52
+finetune/ft96.png	6.00
+finetune/ft82.png	1.69
+finetune/ft250.png	16.10
+finetune/ft132.png	15.60
+finetune/ft126.png	12,00
+finetune/ft127.png	1.90
+finetune/ft133.png	5.99
+finetune/ft83.png	14.99
+finetune/ft251.png	18.00
+finetune/ft245.png	6.69
+finetune/ft97.png	1,272.41
+finetune/ft40.png	44.51
+finetune/ft54.png	26.00
+finetune/ft68.png	10.330
+finetune/ft42.png	11.00
+finetune/ft56.png	18.99
+finetune/ft253.png	7.78
+finetune/ft81.png	4.26
+finetune/ft95.png	1.890 A
+finetune/ft247.png	442,00
+finetune/ft119.png	6.50
+finetune/ft125.png	$23.80
+finetune/ft131.png	22.00
+finetune/ft130.png	28.35
+finetune/ft124.png	7.00
+finetune/ft118.png	€
+finetune/ft94.png	11.50
+finetune/ft246.png	41.40 F
+finetune/ft252.png	€ 10,50
+finetune/ft80.png	RMS.89
+finetune/ft57.png	48.00
+finetune/ft43.png	RM6.99
+finetune/ft47.png	13,00
+finetune/ft53.png	56,32€
+finetune/ft84.png	$0.38
+finetune/ft256.png	1.20 ZRL
+finetune/ft242.png	RN4.10
+finetune/ft90.png	12.00
+finetune/ft120.png	1.98 F
+finetune/ft134.png	4.10 FS
+finetune/ft108.png	0.08
+finetune/ft109.png	3.98 FS
+finetune/ft135.png	25.00
+finetune/ft121.png	9.61
+finetune/ft243.png	26.00
+finetune/ft91.png	3.00
+finetune/ft85.png	8.00
+finetune/ft257.png	6.00
+finetune/ft52.png	35.98
+finetune/ft46.png	6.77
+finetune/ft50.png	24.48
+finetune/ft44.png	$2.00
+finetune/ft78.png	1.59 F
+finetune/ft93.png	11.95
+finetune/ft241.png	5.00
+finetune/ft255.png	6.10 TX
+finetune/ft87.png	$10.00
+finetune/ft137.png	103.00
+finetune/ft123.png	1.08
+finetune/ft122.png	2,00
+finetune/ft254.png  4.60 ZRL
+finetune/ft86.png	8.28
+finetune/ft92.png	10.00
+finetune/ft240.png	61,95€
+finetune/ft79.png	1.14
+finetune/ft45.png	$2.77
+finetune/ft51.png	$2.06
+finetune/ft36.png	126.37
+finetune/ft22.png	14.95
+finetune/ft227.png	3.00
+finetune/ft233.png	3.67
+finetune/ft192.png	5.50 F
+finetune/ft186.png	3,50
+finetune/ft179.png	169.78
+finetune/ft151.png	15.00
+finetune/ft145.png	13.74
+finetune/ft144.png	104.00
+finetune/ft150.png	15.00
+finetune/ft178.png	16,00
+finetune/ft187.png	4.90
+finetune/ft193.png	6,00
+finetune/ft232.png	10.00
+finetune/ft226.png	44,00
+finetune/ft1.png	11.95
+finetune/ft23.png	2.91
+finetune/ft37.png	1.00
+finetune/ft21.png	4.08
+finetune/ft3.png	13,74 $
+finetune/ft35.png	$35.32
+finetune/ft218.png	9.00
+finetune/ft230.png	23,80 $
+finetune/ft224.png  61,95
+finetune/ft185.png	2.99 F
+finetune/ft191.png	2.77 $
+finetune/ft146.png	1.50
+finetune/ft153.png	1,19 $
+finetune/ft147.png	1.28
+finetune/ft190.png	2.48 FS
+finetune/ft184.png	61,95€
+finetune/ft225.png	26.38
+finetune/ft231.png	$6.00
+finetune/ft219.png	1.78 FS
+finetune/ft34.png	$1.04
+finetune/ft2.png	0.60
+finetune/ft20.png	2,00
+finetune/ft6.png	$23.80
+finetune/ft24.png	11.13
+finetune/ft30.png	£15.13
+finetune/ft18.png	5,00
+finetune/ft235.png	9.36
+finetune/ft221.png	$2.75
+finetune/ft209.png	11.00
+finetune/ft180.png	12,00
+finetune/ft194.png	35.32 $
+finetune/ft143.png	$17.95
+finetune/ft157.png	1,50
+finetune/ft156.png	79.75
+finetune/ft142.png	4.80 F
+finetune/ft195.png	1.69
+finetune/ft181.png	EURO
+finetune/ft208.png	6.00
+finetune/ft220.png	4,00
+finetune/ft234.png	$20.70
+finetune/ft19.png	3.00
+finetune/ft31.png	3.50
+finetune/ft25.png	1.350 A
+finetune/ft7.png	$20.70
+finetune/ft33.png	16.00
+finetune/ft5.png	1,19 $
+finetune/ft27.png	€0.00
+finetune/ft222.png	120,00
+finetune/ft236.png	4.26
+finetune/ft197.png	2.00
+finetune/ft183.png	29.64
+finetune/ft154.png	5.200 A
+finetune/ft140.png	16.99
+finetune/ft168.png	0.60
+finetune/ft169.png	10.00
+finetune/ft141.png	160.17
+finetune/ft155.png	13.75
+finetune/ft182.png	.44
+finetune/ft196.png	1.00
+finetune/ft237.png	28.50
+finetune/ft223.png	RM34.90
+finetune/ft26.png	8,00
+finetune/ft4.png	0,60 $
+finetune/ft32.png	10.40

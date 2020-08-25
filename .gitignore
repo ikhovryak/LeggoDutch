@@ -12,3 +12,4 @@ result*
 weights*
 .vscode/
 finetune-dataset/
+.vscode/settings.json

@@ -2,20 +2,19 @@ import os, sys;
 from pathlib import Path
 import cv2
 import re
-import torch
 
 import CRAFT
 from CRAFT import craft_utils
 from CRAFT import imgproc
-from end2end.CRAFT import craft_engine
+from CRAFT import craft_engine
 
 import deep_recognition
 from deep_recognition import *
-from end2end.pyteserract_engine import recognize
-from end2end.preprocess_image import preprocess
-from end2end.food_helper import if_food, line_food
+from pyteserract_engine import recognize
+from preprocess_image import preprocess
+from food_helper import if_food, line_food
 
-def text_main_engine(image):
+def text_main_engine(image, weights_dir):
 
     lines = []
 
@@ -24,7 +23,7 @@ def text_main_engine(image):
     # cv2.imshow("main", dewarped)
     # cv2.waitKey(0)
     
-    bboxes = craft_engine.predict(dewarped) # return predicted bounding boxes of text 
+    bboxes = craft_engine.predict(dewarped, trained_model = weights_dir) # return predicted bounding boxes of text 
 
     # results = deep_recognition.deep_recognize_engine.recognize(bboxes)
     #TODO: modify code in deep-text-recognize to experiment this text recognition engine
@@ -34,13 +33,13 @@ def text_main_engine(image):
 
     #  ('W/Blk Pudding', (135.57208, 245.2455, 399.23886, 415.66885))
     # ('1.55', (380.0, 414.66666, 400.0, 417.33334))
-    # range 1 - range2 = -1.5
+    # range 1 -range2 = -1.5
 
     # ('1.55', (380.0, 414.66666, 400.0, 417.33334))
     # ('1 Breakfast Tea', (101.17823, 226.64772, 442.10788, 457.12082))
 
     for idx in range(len(results)):
-        line = [results[idx][0].strip()]
+        line = [results[idx][0]]
 
         for i in range(idx + 1, len(results)):
             
@@ -55,9 +54,8 @@ def text_main_engine(image):
             range2 = bot2 - top2
 
             if -5 < (mid1 - mid2) < 5:
-               
-                line.append(results[i][0].strip())
-
+                
+                line.append(results[i][0])
                 word = results[i][0].split()
 
         lines.append(line)
