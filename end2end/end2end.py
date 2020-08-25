@@ -14,7 +14,7 @@ from pyteserract_engine import recognize
 from preprocess_image import preprocess
 from food_helper import if_food, line_food
 
-def text_main_engine(image):
+def text_main_engine(image, weights_dir):
 
     lines = []
 
@@ -23,7 +23,7 @@ def text_main_engine(image):
     # cv2.imshow("main", dewarped)
     # cv2.waitKey(0)
     
-    bboxes = craft_engine.predict(dewarped) # return predicted bounding boxes of text 
+    bboxes = craft_engine.predict(dewarped, trained_model = weights_dir) # return predicted bounding boxes of text 
 
     # results = deep_recognition.deep_recognize_engine.recognize(bboxes)
     #TODO: modify code in deep-text-recognize to experiment this text recognition engine

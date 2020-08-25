@@ -14,6 +14,10 @@ from twilio_message import send_message
 from CRAFT import imgproc
 from end2end.end2end import text_main_engine
 
+import end2end.CRAFT
+from end2end.CRAFT import imgproc
+from end2end.end2end import text_main_engine
+
 app = Flask(__name__)
 speech_key, service_region = "c87da06e1dfe4dd3b6e58fa41ec19c95", "eastus"
 app.config['SECRET_KEY'] = "4cf9c9881c554ef032f3a12c7f225dea"
@@ -21,14 +25,27 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
 
-def get_food_items_using_PyTorch(image):
-    """ This is just a dummy function for now, replace with PyTorch algorithm.
+def get_food_items_using_PyTorch(image, weights_dir):
+    """
     Input: Pillow image file (png or jpg)
     Output: Pandas Dataframe with "Food" and "Price" columns 
+<<<<<<< HEAD
+    
+    food = {
+        "Pasta Bolognese":12.50,
+        "Pasta Carbonara":13.00,
+        "Pizza": 10.00,
+        "Cheesecake": 8.00
+    }
+=======
+>>>>>>> 7172326fdc32f56fee8db285e3b801a2a8aae47c
     """
 
     food = text_main_engine(image)
 
+<<<<<<< HEAD
+    df = pd.DataFrame(list(food.items()),columns = ['Food','Price'])
+=======
     # food = {
     #     "Pasta Bolognese":12.50,
     #     "Pasta Carbonara":13.00,
@@ -38,6 +55,7 @@ def get_food_items_using_PyTorch(image):
     
     df = pd.DataFrame(list(food.items()), columns = ['Food','Price'])
     
+>>>>>>> 7172326fdc32f56fee8db285e3b801a2a8aae47c
     length = df.shape[0]
     df["Friend"] = ["" for i in range(length)]
     
@@ -54,7 +72,6 @@ class Params():
 
     # FOOD_DF is the main df with food items, prices and owners, empty at the beginning
     FOODS_DF = pd.DataFrame() 
-
 
 
 @app.route("/")
@@ -76,10 +93,17 @@ def get_main_data():
         num_friends = int(upload_form.num_friends.data)
 
         if upload_form.receipt_image.data:
+<<<<<<< HEAD
+
+            image = imgproc.loadImage(upload_form.receipt_image.data)
+            
+            Params.FOODS_DF = get_food_items_using_PyTorch(image, weights_dir)
+=======
             # image = Image.open(upload_form.receipt_image.data)
             image = imgproc.loadImage(upload_form.receipt_image.data)
 
             Params.FOODS_DF = get_food_items_using_PyTorch(image)
+>>>>>>> 7172326fdc32f56fee8db285e3b801a2a8aae47c
 
             # when form is validated and submitted, go to entering individual people's details
             return redirect(url_for('people_details', restaurant=restaurant, date=date, count=num_friends))
@@ -94,7 +118,6 @@ def people_details():
     """
     count = int(request.args.get('count'))
     
-
     if request.method == 'POST':
         restaurant = request.args.get('restaurant')
         date = request.args.get('date')
