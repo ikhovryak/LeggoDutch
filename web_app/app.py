@@ -11,7 +11,9 @@ import pandas as pd
 import json
 from twilio_message import send_message
 
-from CRAFT import imgproc
+
+import end2end.CRAFT
+from end2end.CRAFT import imgproc
 from end2end.end2end import text_main_engine
 
 app = Flask(__name__)
@@ -21,23 +23,22 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
 
-def get_food_items_using_PyTorch(image):
-    """ This is just a dummy function for now, replace with PyTorch algorithm.
+def get_food_items_using_PyTorch(image, weights_dir):
+    """
     Input: Pillow image file (png or jpg)
     Output: Pandas Dataframe with "Food" and "Price" columns 
+    
+    food = {
+        "Pasta Bolognese":12.50,
+        "Pasta Carbonara":13.00,
+        "Pizza": 10.00,
+        "Cheesecake": 8.00
+    }
     """
 
     food = text_main_engine(image)
 
-    # food = {
-    #     "Pasta Bolognese":12.50,
-    #     "Pasta Carbonara":13.00,
-    #     "Pizza": 10.00,
-    #     "Cheesecake": 8.00
-    # }
-    
-    df = pd.DataFrame(list(food.items()), columns = ['Food','Price'])
-    
+    df = pd.DataFrame(list(food.items()),columns = ['Food','Price'])
     length = df.shape[0]
     df["Friend"] = ["" for i in range(length)]
     
@@ -54,7 +55,6 @@ class Params():
 
     # FOOD_DF is the main df with food items, prices and owners, empty at the beginning
     FOODS_DF = pd.DataFrame() 
-
 
 
 @app.route("/")
@@ -76,9 +76,10 @@ def get_main_data():
         num_friends = int(upload_form.num_friends.data)
 
         if upload_form.receipt_image.data:
-            # image = Image.open(upload_form.receipt_image.data)
+
             image = imgproc.loadImage(upload_form.receipt_image.data)
-            Params.FOODS_DF = get_food_items_using_PyTorch(image)
+            
+            Params.FOODS_DF = get_food_items_using_PyTorch(image, weights_dir)
 
             # when form is validated and submitted, go to entering individual people's details
             return redirect(url_for('people_details', restaurant=restaurant, date=date, count=num_friends))
@@ -93,7 +94,6 @@ def people_details():
     """
     count = int(request.args.get('count'))
     
-
     if request.method == 'POST':
         restaurant = request.args.get('restaurant')
         date = request.args.get('date')
@@ -112,8 +112,8 @@ def result():
     """
     restaurant = request.args.get('restaurant')
     date = request.args.get('date')
-    length = Params.FOODS_DF.shape[0]
-    Params.FOODS_DF["Friend"] = ["" for i in range(length)]
+    # length = Params.FOODS_DF.shape[0]
+    # Params.FOODS_DF["Friend"] = ["" for i in range(length)]
     
     if request.method == 'POST':
         friends_items = request.form.getlist('friend_phone')
