@@ -1,0 +1,223 @@
+--------------------------------------------------------------------------------
+image_path               	predicted_labels         	confidence score
+--------------------------------------------------------------------------------
+demo_image/demo_1.png    	available                	0.9999
+demo_image/demo_2.jpg    	shakeshack               	0.9533
+demo_image/demo_3.png    	london                   	0.9840
+demo_image/demo_4.png    	greenstead               	0.9985
+demo_image/demo_5.png    	toast                    	0.9961
+demo_image/demo_6.png    	merry                    	0.9975
+demo_image/demo_7.png    	underground              	1.0000
+demo_image/demo_8.jpg    	ronaldo                  	0.8387
+demo_image/demo_9.jpg    	bally                    	0.7566
+demo_image/demo_10.jpg   	university               	0.9998
+demo_image/demo_11.jpg   	sall                     	0.0012
+--------------------------------------------------------------------------------
+image_path               	predicted_labels         	confidence score
+--------------------------------------------------------------------------------
+demo_image/demo_1.png    	available                	0.9999
+demo_image/demo_2.jpg    	shakeshack               	0.9533
+demo_image/demo_3.png    	london                   	0.9840
+demo_image/demo_4.png    	greenstead               	0.9985
+demo_image/demo_5.png    	toast                    	0.9961
+demo_image/demo_6.png    	merry                    	0.9975
+demo_image/demo_7.png    	underground              	1.0000
+demo_image/demo_8.jpg    	ronaldo                  	0.8387
+demo_image/demo_9.jpg    	bally                    	0.7566
+demo_image/demo_10.jpg   	university               	0.9998
+demo_image/demo_11.jpg   	unimigan                 	0.0024
+--------------------------------------------------------------------------------
+image_path               	predicted_labels         	confidence score
+--------------------------------------------------------------------------------
+demo_image/demo_1.png    	available                	0.9999
+demo_image/demo_2.jpg    	shakeshack               	0.9533
+demo_image/demo_3.png    	london                   	0.9840
+demo_image/demo_4.png    	greenstead               	0.9985
+demo_image/demo_5.png    	toast                    	0.9961
+demo_image/demo_6.png    	merry                    	0.9975
+demo_image/demo_7.png    	underground              	1.0000
+demo_image/demo_8.jpg    	ronaldo                  	0.8387
+demo_image/demo_9.jpg    	bally                    	0.7566
+demo_image/demo_10.jpg   	university               	0.9998
+demo_image/demo_11.jpg   	interminitions           	0.0000
+--------------------------------------------------------------------------------
+image_path               	predicted_labels         	confidence score
+--------------------------------------------------------------------------------
+demo_image/demo_1.png    	available                	0.9999
+demo_image/demo_2.jpg    	shakeshack               	0.9533
+demo_image/demo_3.png    	london                   	0.9840
+demo_image/demo_4.png    	greenstead               	0.9985
+demo_image/demo_5.png    	toast                    	0.9961
+demo_image/demo_6.png    	merry                    	0.9975
+demo_image/demo_7.png    	underground              	1.0000
+demo_image/demo_8.jpg    	ronaldo                  	0.8387
+demo_image/demo_9.jpg    	bally                    	0.7566
+demo_image/demo_10.jpg   	university               	0.9998
+demo_image/demo_11.jpg   	blatterlacchiator        	0.2419
+--------------------------------------------------------------------------------
+image_path               	predicted_labels         	confidence score
+--------------------------------------------------------------------------------
+demo_image/demo_1.png    	available                	0.9999
+demo_image/demo_2.jpg    	shakeshack               	0.9533
+demo_image/demo_3.png    	london                   	0.9840
+demo_image/demo_4.png    	greenstead               	0.9985
+demo_image/demo_5.png    	toast                    	0.9961
+demo_image/demo_6.png    	merry                    	0.9975
+demo_image/demo_7.png    	underground              	1.0000
+demo_image/demo_8.jpg    	ronaldo                  	0.8387
+demo_image/demo_9.jpg    	bally                    	0.7566
+demo_image/demo_10.jpg   	university               	0.9998
+demo_image/demo_11.jpg   	2xlatte                  	0.6520
+--------------------------------------------------------------------------------
+image_path               	predicted_labels         	confidence score
+--------------------------------------------------------------------------------
+demo_image/demo_1.png    	available                	0.9999
+demo_image/demo_2.jpg    	shakeshack               	0.9533
+demo_image/demo_3.png    	london                   	0.9840
+demo_image/demo_4.png    	greenstead               	0.9985
+demo_image/demo_5.png    	toast                    	0.9961
+demo_image/demo_6.png    	merry                    	0.9975
+demo_image/demo_7.png    	underground              	1.0000
+demo_image/demo_8.jpg    	ronaldo                  	0.8387
+demo_image/demo_9.jpg    	bally                    	0.7566
+demo_image/demo_10.jpg   	university               	0.9998
+demo_image/demo_11 copy 2.jpg	macchiato                	0.9998
+demo_image/demo_11 copy 3.jpg	asochasion               	0.0000
+demo_image/demo_11 copy.jpg	can                      	0.0121
+demo_image/demo_11.jpg   	2xlatte                  	0.6520
+--------------------------------------------------------------------------------
+image_path               	predicted_labels         	confidence score
+--------------------------------------------------------------------------------
+demo_image/demo_1.png    	available                	0.9999
+demo_image/demo_2.jpg    	shakeshack               	0.9533
+demo_image/demo_3.png    	london                   	0.9840
+demo_image/demo_4.png    	greenstead               	0.9985
+demo_image/demo_5.png    	toast                    	0.9961
+demo_image/demo_6.png    	merry                    	0.9975
+demo_image/demo_7.png    	underground              	1.0000
+demo_image/demo_8.jpg    	ronaldo                  	0.8387
+demo_image/demo_9.jpg    	bally                    	0.7566
+demo_image/demo_10.jpg   	university               	0.9998
+demo_image/demo_11 copy 2.jpg	macchiato                	0.9998
+demo_image/demo_11 copy 3.jpg	4550                     	0.8408
+demo_image/demo_11 copy 4.jpg	chf                      	0.9922
+demo_image/demo_11 copy 5.jpg	900                      	0.8849
+demo_image/demo_11 copy.jpg	can                      	0.0121
+demo_image/demo_11.jpg   	2xlatte                  	0.6520
+--------------------------------------------------------------------------------
+image_path               	predicted_labels         	confidence score
+--------------------------------------------------------------------------------
+demo_image/166_322.png   	entree                   	0.9999
+demo_image/166_352.png   	grain                    	0.9998
+demo_image/166_380.png   	low                      	0.9999
+demo_image/168_406.png   	meatless                 	0.9998
+demo_image/168_434.png   	bananas                  	0.9997
+demo_image/172_914.png   	items                    	0.8677
+demo_image/172_941.png   	061120016                	0.1968
+demo_image/174_495.png   	salad                    	0.9996
+demo_image/175_551.png   	subtotal                 	0.9999
+demo_image/176_611.png   	visa                     	0.9999
+demo_image/179_580.png   	total                    	0.9997
+demo_image/186_774.png   	micro144008              	0.0001
+demo_image/187_753.png   	061                      	0.3887
+demo_image/189_637.png   	purchase                 	1.0000
+demo_image/189_667.png   	visa                     	0.9999
+demo_image/189_729.png   	lane                     	0.9999
+demo_image/189_813.png   	eps                      	0.9999
+demo_image/191_695.png   	auth                     	0.9999
+demo_image/198_466.png   	4ea                      	0.9965
+demo_image/221_378.png   	fat                      	0.9999
+demo_image/231_749.png   	15716                    	0.9807
+demo_image/247_350.png   	rice                     	0.9999
+demo_image/247_813.png   	sequence                 	0.9999
+demo_image/252_486.png   	dressing                 	1.0000
+demo_image/253_202.png   	store                    	0.9999
+demo_image/255_650.png   	intercomplessness        	0.0001
+demo_image/256_260.png   	open                     	1.0000
+demo_image/258_320.png   	asian                    	0.9999
+demo_image/262_916.png   	9                        	0.9998
+demo_image/270_79.png    	trader                   	0.9992
+demo_image/275_378.png   	na                       	0.9997
+demo_image/277_174.png   	san                      	1.0000
+demo_image/283_686.png   	02092c                   	0.9755
+demo_image/286_723.png   	07                       	0.9907
+demo_image/289_401.png   	falafel                  	0.9998
+demo_image/290_1009.png  	thank                    	0.9999
+demo_image/294_465.png   	a                        	0.9714
+demo_image/303_376.png   	tural                    	1.0000
+demo_image/311_344.png   	brown                    	1.0000
+demo_image/315_746.png   	1247                     	0.9284
+demo_image/318_461.png   	0                        	0.7429
+demo_image/321_255.png   	8100am                   	0.8011
+demo_image/331_169.png   	francisco                	0.9998
+demo_image/331_198.png   	4078                     	0.5009
+demo_image/338_316.png   	beef                     	1.0000
+demo_image/341_635.png   	s                        	0.9597
+demo_image/343_144.png   	555                      	0.9994
+demo_image/346_459.png   	197ea                    	0.8090
+demo_image/350_943.png   	121                      	0.9322
+demo_image/351_1082.png  	www                      	0.9937
+demo_image/358_772.png   	termfo01                 	0.5468
+demo_image/372_485.png   	pear                     	1.0000
+demo_image/378_1008.png  	you                      	1.0000
+demo_image/381_369.png   	granola                  	0.9996
+demo_image/390_937.png   	47pm                     	0.9977
+demo_image/394_1036.png  	trader                   	0.9979
+demo_image/395_140.png   	9th                      	0.9988
+demo_image/405_316.png   	8                        	0.9713
+demo_image/406_630.png   	20                       	0.9992
+demo_image/409_688.png   	exp                      	1.0000
+demo_image/409_710.png   	cashier                  	0.9985
+demo_image/409_1069.png  	traderjoes               	0.9983
+demo_image/412_744.png   	ref                      	0.9999
+demo_image/414_808.png   	i                        	0.4378
+demo_image/416_255.png   	to                       	0.9999
+demo_image/424_191.png   	c4155                    	0.1070
+demo_image/430_309.png   	broccoli                 	0.9959
+demo_image/436_1005.png  	for                      	1.0000
+demo_image/439_477.png   	champagne                	0.9998
+demo_image/440_798.png   	075104                   	0.9950
+demo_image/447_138.png   	street                   	1.0000
+demo_image/448_630.png   	71                       	0.9997
+demo_image/455_744.png   	iseq                     	0.7901
+demo_image/456_247.png   	101000mm                 	0.1245
+demo_image/465_684.png   	date                     	1.0000
+demo_image/474_931.png   	0078                     	0.9980
+demo_image/476_166.png   	ca                       	0.9999
+demo_image/482_768.png   	icecc                    	0.9443
+demo_image/492_998.png   	shopping                 	1.0000
+demo_image/496_1035.png  	joe                      	0.9996
+demo_image/503_185.png   	86341292                 	0.3051
+demo_image/519_714.png   	h                        	0.5649
+demo_image/521_742.png   	i                        	0.5295
+demo_image/527_77.png    	joeys                    	0.9963
+demo_image/528_161.png   	94103                    	0.9979
+demo_image/530_684.png   	xxx                      	0.5396
+demo_image/545_930.png   	07                       	0.9904
+demo_image/547_708.png   	1292                     	0.9980
+demo_image/548_734.png   	075104                   	0.9936
+demo_image/549_309.png   	m                        	0.9994
+demo_image/555_1036.png  	s                        	0.9990
+demo_image/559_243.png   	daily                    	0.9995
+demo_image/560_680.png   	jkk                      	0.0438
+demo_image/571_1074.png  	com                      	0.9980
+demo_image/588_900.png   	h                        	0.6169
+demo_image/590_915.png   	1292                     	0.9476
+demo_image/603_305.png   	6                        	0.9998
+demo_image/604_333.png   	i                        	0.3050
+demo_image/609_418.png   	0                        	0.6982
+demo_image/613_474.png   	2                        	0.9989
+demo_image/624_997.png   	at                       	1.0000
+demo_image/630_301.png   	99                       	0.9998
+demo_image/630_330.png   	93                       	0.2007
+demo_image/631_893.png   	jazzzmarie               	0.9972
+demo_image/633_386.png   	99                       	0.9996
+demo_image/637_416.png   	76                       	0.9996
+demo_image/639_472.png   	99                       	0.9997
+demo_image/643_534.png   	s20                      	0.7497
+demo_image/643_559.png   	s20                      	0.8325
+demo_image/646_588.png   	s20                      	0.7444
+demo_image/660_923.png   	0955                     	0.9894
+demo_image/697_532.png   	71                       	0.9994
+demo_image/699_558.png   	71                       	0.9996
+demo_image/701_586.png   	71                       	0.9996
