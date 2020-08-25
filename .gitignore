@@ -1,3 +1,7 @@
+!weights/
+!craft_mlt_25k.pth
+!craft_refiner_CTW1500.pth
+
 *.pth
 *.pyc
 *.png
@@ -9,7 +13,6 @@ ghega-dataset/
 *.pkl
 *.pth
 result*
-weights*
 .vscode/
 finetune-dataset/
 .vscode/settings.json
