@@ -97,15 +97,13 @@ def test_net(net, image, text_threshold, link_threshold, low_text, cuda, canvas_
 
 def predict(image,
             trained_model='weights/craft_mlt_25k.pth', 
-            text_threshold=0.7, low_text=0.4, link_threshold=0.4, cuda=False,
+            text_threshold=0.7, low_text=0.4, link_threshold=0.4, cuda=True,
             canvas_size=1280, mag_ratio=1.5,
             poly=False, show_time=False, test_folder='/data/', 
             refine=True, refiner_model='weights/craft_refiner_CTW1500.pth'):
 
     net = CRAFT()     # initialize
 
-    if torch.cuda.is_available():
-        cuda = True
     print('Loading weights from checkpoint (' + trained_model + ')')
     if cuda:
         net.load_state_dict(copyStateDict(torch.load(trained_model)))
