@@ -24,10 +24,24 @@ app = Flask(__name__)
 speech_key, service_region = "c87da06e1dfe4dd3b6e58fa41ec19c95", "eastus"
 app.config['SECRET_KEY'] = "4cf9c9881c554ef032f3a12c7f225dea"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
 db = SQLAlchemy(app)
 
-
-def get_food_items_using_PyTorch(image, weights_dir):
+@app.after_request
+def add_header(r):
+    """
+    Add headers to both force latest IE rendering engine or Chrome Frame,
+    and also to cache the rendered page for 10 minutes.
+    """
+    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    r.headers["Pragma"] = "no-cache"
+    r.headers["Expires"] = "0"
+    r.headers['Cache-Control'] = 'public, max-age=0'
+    return r
+    
+def get_food_items_using_PyTorch(image, weights_dir, weights_refiner_dir):
     """
     Input: Pillow image file (png or jpg)
     Output: Pandas Dataframe with "Food" and "Price" columns 
@@ -40,7 +54,7 @@ def get_food_items_using_PyTorch(image, weights_dir):
     }
     """
 
-    food = text_main_engine(image)
+    food = text_main_engine(image, weights_dir, weights_refiner_dir)
 
     df = pd.DataFrame(list(food.items()), columns = ['Food','Price'])
 
@@ -84,7 +98,7 @@ def get_main_data():
 
             image = imgproc.loadImage(upload_form.receipt_image.data)
             
-            Params.FOODS_DF = get_food_items_using_PyTorch(image, weights_dir)
+            Params.FOODS_DF = get_food_items_using_PyTorch(image, "./end2end/weights/craft_mlt_25k.pth", "./end2end/weights/craft_refiner_CTW1500.pth" )
 
             # when form is validated and submitted, go to entering individual people's details
             return redirect(url_for('people_details', restaurant=restaurant, date=date, count=num_friends))
