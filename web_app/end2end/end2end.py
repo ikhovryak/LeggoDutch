@@ -7,13 +7,13 @@ import torch
 import CRAFT
 from CRAFT import craft_utils
 from CRAFT import imgproc
-from CRAFT import craft_engine
+from end2end.CRAFT import craft_engine
 
 import deep_recognition
 from deep_recognition import *
-from pyteserract_engine import recognize
-from preprocess_image import preprocess
-from food_helper import if_food, line_food
+from end2end.pyteserract_engine import recognize
+from end2end.preprocess_image import preprocess
+from end2end.food_helper import if_food, line_food
 
 def text_main_engine(image):
 

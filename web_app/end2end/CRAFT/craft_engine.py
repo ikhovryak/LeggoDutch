@@ -21,11 +21,11 @@ from skimage import io
 import numpy as np
 from CRAFT import craft_utils
 from CRAFT import imgproc
-from CRAFT import file_utils
+from end2end.CRAFT import file_utils
 import json
 import zipfile
 
-from CRAFT.craft import CRAFT
+from end2end.CRAFT.craft import CRAFT
 
 from collections import OrderedDict
 def copyStateDict(state_dict):
