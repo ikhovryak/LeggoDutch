@@ -9,6 +9,10 @@ import glob
 from PIL import Image
 import pandas as pd
 import json
+from twilio_message import send_message
+
+from CRAFT import imgproc
+from end2end.end2end import text_main_engine
 
 app = Flask(__name__)
 speech_key, service_region = "c87da06e1dfe4dd3b6e58fa41ec19c95", "eastus"
@@ -22,15 +26,21 @@ def get_food_items_using_PyTorch(image):
     Input: Pillow image file (png or jpg)
     Output: Pandas Dataframe with "Food" and "Price" columns 
     """
-    food = {
-        "Pasta Bolognese":12.50,
-        "Pasta Carbonara":13.00,
-        "Pizza": 10.00,
-        "Cheesecake": 8.00
-    }
-    df = pd.DataFrame(list(food.items()),columns = ['Food','Price'])
+
+    food = text_main_engine(image)
+
+    # food = {
+    #     "Pasta Bolognese":12.50,
+    #     "Pasta Carbonara":13.00,
+    #     "Pizza": 10.00,
+    #     "Cheesecake": 8.00
+    # }
+    
+    df = pd.DataFrame(list(food.items()), columns = ['Food','Price'])
+    
     length = df.shape[0]
     df["Friend"] = ["" for i in range(length)]
+    
     return df
 
 class Params():
@@ -66,7 +76,9 @@ def get_main_data():
         num_friends = int(upload_form.num_friends.data)
 
         if upload_form.receipt_image.data:
-            image = Image.open(upload_form.receipt_image.data)
+            # image = Image.open(upload_form.receipt_image.data)
+            image = imgproc.loadImage(upload_form.receipt_image.data)
+
             Params.FOODS_DF = get_food_items_using_PyTorch(image)
 
             # when form is validated and submitted, go to entering individual people's details
@@ -101,8 +113,8 @@ def result():
     """
     restaurant = request.args.get('restaurant')
     date = request.args.get('date')
-    length = Params.FOODS_DF.shape[0]
-    Params.FOODS_DF["Friend"] = ["" for i in range(length)]
+    # length = Params.FOODS_DF.shape[0]
+    # Params.FOODS_DF["Friend"] = ["" for i in range(length)]
     
     if request.method == 'POST':
         friends_items = request.form.getlist('friend_phone')
@@ -129,13 +141,18 @@ def final_individual_totals():
     restaurant = request.args.get('restaurant')
     date = request.args.get('date')
     personal_total_df = Params.FOODS_DF.groupby(['Friend']).sum().reset_index()
+    # replace from_number with twilio phone number. Make sure you register the phone number you want to message to on twilio account if not your message will not reach
+    # the phone number. This is a limitation of a trial account.
+    from_number = "+17865634468"
 
+    print(personal_total_df)
     if request.method == 'POST':
-        # message_text = "Hello! Just a reminder to pay $%.2f to the host for your meal at %s on %s!" % (price, restaurant, date)
+        for index, row in personal_total_df.iterrows():
+            price = row['Price']
+            message_text = "Hello! Just a reminder to pay $%.2f to the host for your meal at %s on %s!" % (price, restaurant, date)
+            send_message(from_number, row['Phone'], message_text)
 
-        # ----------------------
-        # TWILIO PART GOES HERE (see commented out message template above)
-        # ----------------------
+        
         flash('Text messages were sent!', 'success')
         pass
 

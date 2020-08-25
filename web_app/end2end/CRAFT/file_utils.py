@@ -2,7 +2,7 @@
 import os
 import numpy as np
 import cv2
-import imgproc
+from CRAFT import imgproc
 
 # borrowed from https://github.com/lengstrom/fast-style-transfer/blob/master/src/utils.py
 def get_files(img_dir):
@@ -25,7 +25,7 @@ def list_files(in_path):
                 gt_files.append(os.path.join(dirpath, file))
             elif ext == '.zip':
                 continue
-    # img_files.sort()
+    # img_files.sort() 
     # mask_files.sort()
     # gt_files.sort()
     return img_files, mask_files, gt_files
@@ -38,7 +38,7 @@ def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=
             boxes (array): array of result file
                 Shape: [num_detections, 4] for BB output / [num_detections, 4] for QUAD output
         Return:
-            None
+            Result image
         """
         img = np.array(img)
 
@@ -73,4 +73,6 @@ def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=
 
         # Save result image
         cv2.imwrite(res_img_file, img)
+
+        return img
 

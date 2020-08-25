@@ -2,7 +2,13 @@
 *.pyc
 *.png
 *.pb
-__pychache__/
+__pycache__/
 ghega-dataset/
 .DS_Store
-
+*.swp
+*.pkl
+*.pth
+result*
+weights*
+.vscode/
+finetune-dataset/
