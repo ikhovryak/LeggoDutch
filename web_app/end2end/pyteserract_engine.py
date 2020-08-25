@@ -6,6 +6,7 @@ def recognize(img, bboxes):
 
     (origH, origW) = img.shape[:2]
     results = []
+    pytesseract.pytesseract.tesseract_cmd = 'C://Users//Samuel//AppData//Local//Tesseract-OCR//tesseract.exe'
 
     for idx, ([l, t], [r, t], [r, b], [l, b]) in enumerate(bboxes):
 

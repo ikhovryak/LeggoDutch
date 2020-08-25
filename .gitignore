@@ -1,8 +1,3 @@
-!weights/
-!craft_mlt_25k.pth
-!craft_refiner_CTW1500.pth
-
-*.pth
 *.pyc
 *.png
 *.pb
@@ -11,7 +6,6 @@ ghega-dataset/
 .DS_Store
 *.swp
 *.pkl
-*.pth
 result*
 .vscode/
 finetune-dataset/
